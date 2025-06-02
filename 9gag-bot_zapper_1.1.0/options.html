@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>9GAG Bot Zapper Options</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      display: block; 
+      margin: 0; 
+      text-align: left;
+    }
+    h1 {
+      color: #333;
+      text-align: left;
+    }
+    p {
+      text-align: left; 
+    }
+
+    .controls-container {
+        display: flex;
+        flex-direction: column; 
+        align-items: flex-start;
+        padding: 20px;
+        border: 1px solid #eee;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+        max-width: 400px;
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 20px;
+    }
+
+    .controls-container label {
+        display: flex; 
+        align-items: center; 
+        margin-bottom: 10px;
+        font-weight: normal;
+        width: 100%;
+    }
+
+    .controls-container input[type="radio"] {
+        margin-right: 8px; 
+    }
+
+    .controls-container button {
+        margin-top: 10px; 
+        width: 100%; 
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        padding: 10px 15px;
+    }
+    .controls-container button:hover {
+        background-color: #0056b3;
+    }
+
+    #status {
+      margin-top: 10px;
+      text-align: center;
+      color: green;
+      width: 100%;
+    }
+
+    .level-descriptions {
+        margin-bottom: 20px; 
+        max-width: 400px; 
+        text-align: left;
+        padding: 15px;
+        background-color: #f0f0f0;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        box-sizing: border-box; 
+    }
+    .level-descriptions p {
+        margin-bottom: 8px;
+        line-height: 1.4;
+        text-align: left; 
+    }
+    .level-descriptions p:last-child {
+        margin-bottom: 0;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>9GAG Bot Zapper Blocking Level</h1>
+  <p>Select which level of blacklisted posts to block:</p>
+
+  <div class="level-descriptions">
+    <p><strong>Low</strong> - Blocks the most blatant bot and spam accounts (Level 1).</p>
+    <p><strong>Medium</strong> - Filters out both obvious and more subtle bot accounts (Levels 1 & 2).</p>
+    <p><strong>High</strong> - Achieve a completely bot-free feed by blocking all known bot accounts (Levels 1, 2 & 3).</p>
+  </div>
+
+  <div class="controls-container">
+    <label>
+      <input type="radio" name="blockingLevel" value="low" id="levelLow"> Low (Block Level 1 users)
+    </label>
+    <label>
+      <input type="radio" name="blockingLevel" value="medium" id="levelMedium"> Medium (Block Level 1 & 2 users)
+    </label>
+    <label>
+      <input type="radio" name="blockingLevel" value="high" id="levelHigh"> High (Block Level 1, 2 & 3 users)
+    </label>
+
+    <button id="saveButton">Save</button>
+    <div id="status"></div>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>
