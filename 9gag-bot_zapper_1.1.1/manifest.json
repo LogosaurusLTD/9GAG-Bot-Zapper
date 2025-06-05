@@ -1,0 +1,45 @@
+{
+  "manifest_version": 3,
+  "name": "9GAG Bot Zapper",
+  "version": "1.1.1",
+  "description": "Blocks posts from identified bot/spam accounts on 9GAG.",
+  
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
+    "default_title": "9GAG Bot Zapper"
+  },
+
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": ["https://9gag.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+    "options_ui": {
+    "page": "options.html",
+    "open_in_tab": false 
+  },
+  "host_permissions": [
+    "https://gist.githubusercontent.com/*" 
+  ],
+  "permissions": [
+    "storage" 
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "9gagbotzapper@logosaurus.com" 
+    }
+  }  
+}
